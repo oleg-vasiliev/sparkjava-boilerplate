@@ -1,0 +1,6 @@
+html {
+    overflow-y: scroll;
+}
+.circular-img {
+    border-radius: 50%;
+}

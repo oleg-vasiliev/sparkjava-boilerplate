@@ -1,0 +1,28 @@
+#set($activeMenuLink = $WebPath.getCONTROL_PANEL_DASHBOARD())
+#parse("/velocity/controlpanel/controlpanel_layout.vm")
+#@mainLayout()
+<div class="row">
+    <div class="twelve column">
+        <h4>$msg.get("TITLE_DASHBOARD")</h4>
+        <p> Ubi est bassus lumen? Secundus, domesticus gabaliums semper visum de mirabilis, nobilis solem.
+            Lunas cadunt in peritus copinga! Sunt devirginatoes visum bi-color, nobilis eraes. Assimilant tandem ducunt ad pius ignigena.
+            Cum capio tolerare, omnes cannabises imitari nobilis, bi-color vigiles!
+        </p>
+    </div>
+</div>
+<div class="row" style="margin-bottom: 20px">
+    <img src="https://placeimg.com/640/480/tech/grayscale?1" class="one-half column">
+    <img src="https://placeimg.com/640/480/tech/grayscale?2" class="one-half column">
+</div>
+<div class="row" style="margin-bottom: 20px">
+    <img src="https://placeimg.com/640/480/tech/grayscale?3" class="one-third column">
+    <img src="https://placeimg.com/640/480/tech/grayscale?4" class="one-third column">
+    <img src="https://placeimg.com/640/480/tech/grayscale?5" class="one-third column">
+</div>
+<div class="row" style="margin-bottom: 20px">
+    <img src="https://placeimg.com/640/480/tech/grayscale?6" class="three columns">
+    <img src="https://placeimg.com/640/480/tech/grayscale?7" class="three columns">
+    <img src="https://placeimg.com/640/480/tech/grayscale?8" class="three columns">
+    <img src="https://placeimg.com/640/480/tech/grayscale?9" class="three columns">
+</div>
+#end

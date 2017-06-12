@@ -1,0 +1,10 @@
+<footer>
+    <div class="container">
+        <div class="row">
+                <span>$msg.get("COMMON_FOOTER_LANG_SELECT_LABEL") <a href="?locale=en">English</a> | <a
+                        href="?locale=de">Deutch</a></span>
+            <br>
+            $msg.get("COMMON_FOOTER_TEXT")
+        </div>
+    </div>
+</footer>

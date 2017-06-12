@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include("/velocity/partials/meta_partial.vm")
+
+    <title>$msg.get("ERROR_500_INTERNAL_SERVER_ERROR_TITLE")</title>
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+</head>
+<body>
+<main>
+    <div class="container">
+        <div class="row" style="margin-top: 25%">
+            <div class="one-half column">
+                <h3>$msg.get("ERROR_500_INTERNAL_SERVER_ERROR_TITLE")</h3>
+                <p>$msg.get("ERROR_500_INTERNAL_SERVER_ERROR")</p>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
+

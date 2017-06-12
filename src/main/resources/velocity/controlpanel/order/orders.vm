@@ -1,0 +1,12 @@
+#set($activeMenuLink = $WebPath.getCONTROL_PANEL_ORDERS())
+#parse("/velocity/controlpanel/controlpanel_layout.vm")
+#@mainLayout()
+<div class="row">
+    <div class="one-half column">
+        <h4>$msg.get("TITLE_ORDERS")</h4>
+        <p> Heu, hippotoxota! Urias congregabo! Pes regius verpa est. Velox, pius ventuss foris acquirere de teres, alter victrix.
+            Cum index studere, omnes equisoes tractare audax, placidus plasmatores.
+        </p>
+    </div>
+</div>
+#end

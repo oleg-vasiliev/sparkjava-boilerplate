@@ -1,0 +1,21 @@
+#set($activeMenuLink = $WebPath.getCONTROL_PANEL_CUSTOMERS())
+#parse("/velocity/controlpanel/controlpanel_layout.vm")
+#@mainLayout()
+<div class="row">
+    <div class="twelve column">
+        <center>
+            #if($customer)
+                <img class="circular-img" src="$customer.getPhoto()" />
+                <h3>$customer.getName()</h3>
+                <h5>$customer.getEmail()</h5>
+                <h5>$customer.getAddress()</h5>
+                <h5>$customer.getPhone()</h5>
+            #else
+                <h1>$msg.get("CUSTOMERS_CUSTOMER_NOT_FOUND")</h1>
+            #end
+            <a class="button" href="$WebPath.getCONTROL_PANEL_CUSTOMERS()">Back</a>
+        </center>
+    </div>
+</div>
+
+#end

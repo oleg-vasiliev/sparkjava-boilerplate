@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include("/velocity/partials/meta_partial.vm")
+
+    <title>$msg.get("LOGIN_HEADING")</title>
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+</head>
+<body>
+
+<main>
+    <div class="container">
+        <form id="loginForm" method="post" style="padding-top: 25%">
+            <div class="row">
+                <div class="one-half column">
+                    <h4>$msg.get("LOGIN_HEAD")</h4>
+                    <label for="exampleEmailInput">$msg.get("LOGIN_LABEL_USERNAME") </label>
+                ##<input class="u-full-width" type="email" name="email" placeholder="email@example.com" value="root@example.com" id="exampleEmailInput">
+                    <select class="u-full-width" name="email" required="required" id="exampleEmailInput">
+                        <option value="root@example.com">root@example.com</option>
+                        <option value="user@example.com">user@example.com</option>
+                    </select>
+                    <label for="examplePasswordInput">$msg.get("LOGIN_LABEL_PASSWORD")</label>
+                    <input class="u-full-width" type="password" name="password" value="password"
+                           id="examplePasswordInput">
+                    <button class="button-primary" type="submit">
+                        $msg.get("LOGIN_BUTTON_LOGIN")
+                    </button>
+
+                    #if($loginRedirect)
+                        <input type="hidden" name="loginRedirect" value="$loginRedirect">
+                    #end
+                    #if($authenticationFailed)
+                        <br><code>$msg.get("LOGIN_AUTH_FAILED")</code>
+                    #elseif($authenticationSucceeded)
+                        <br><code>$msg.get("LOGIN_AUTH_SUCCEEDED", $currentUser)</code>
+                    #elseif($loggedOut)
+                        <br><code>$msg.get("LOGIN_LOGGED_OUT")</code>
+                    #end
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+</body>
+</html>
+

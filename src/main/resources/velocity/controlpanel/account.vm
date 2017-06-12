@@ -1,0 +1,32 @@
+#set($activeMenuLink = "")
+#parse("/velocity/controlpanel/controlpanel_layout.vm")
+#@mainLayout()
+<div class="row">
+    <div class="twelve column">
+        <h4>$msg.get("TITLE_ACCOUNT_SETTINGS")</h4>
+    </div>
+</div>
+<form id="profileForm" method="post">
+    <div class="row">
+        <div class="one-half column">
+
+            <label for="oldPassword">$msg.get("ACCOUNT_OLD_PASSWORD") </label>
+            <input class="u-full-width" type="password" name="password_old" required="required" autocomplete="false"
+                   id="oldPassword">
+
+            <label for="newPassword">$msg.get("ACCOUNT_NEW_PASSWORD") </label>
+            <input class="u-full-width" type="password" name="password_new" required="required" autocomplete="false"
+                   id="newPassword">
+
+            <button class="button-primary" type="submit">
+                $msg.get("ACCOUNT_SAVE_BTN")
+            </button>
+
+            #if($formMessage)
+                <br><code>$msg.get($formMessage)</code>
+            #end
+        </div>
+    </div>
+</form>
+
+#end

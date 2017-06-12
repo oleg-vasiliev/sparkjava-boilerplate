@@ -1,0 +1,26 @@
+#* @implicitly included *#
+
+## Controlpanel common things
+#* @vtlvariable name="WebPath" type="com.olegv.util.Path.Web" *#
+#* @vtlvariable name="UserRole" type="com.olegv.user.UserRole" *#
+#* @vtlvariable name="msg" type="com.olegv.util.MessageBundle" *#
+#* @vtlvariable name="currentUser" type="java.lang.String" *#
+#* @vtlvariable name="currentUserRole" type="java.lang.String" *#
+#* @vtlvariable name="activeMenuLink" type="java.lang.String" *#
+
+## Authorization things
+#* @vtlvariable name="loggedOut" type="java.lang.String" *#
+#* @vtlvariable name="authenticationFailed" type="java.lang.String" *#
+#* @vtlvariable name="authenticationSucceeded" type="java.lang.String" *#
+#* @vtlvariable name="loginRedirect" type="java.lang.String" *#
+
+## User profile
+#* @vtlvariable name="user" type="com.olegv.user.User" *#
+
+## Customers
+#* @vtlvariable name="customers" type="java.lang.Iterable<com.olegv.customer.Customer>" *#
+#* @vtlvariable name="customer" type="com.olegv.customer.Customer" *#
+
+## Common form errors/messages and validation
+#* @vtlvariable name="formMessage" type="java.lang.String" *#
+

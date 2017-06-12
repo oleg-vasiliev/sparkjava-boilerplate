@@ -1,0 +1,74 @@
+#macro(mainLayout)
+<!DOCTYPE html>
+<html>
+<head>
+    #include("/velocity/partials/meta_partial.vm")
+
+    <title>$msg.get("COMMON_TITLE")</title>
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <div class="nav" style="margin-bottom: 30px;">
+            <div class="container">
+                <ul>
+                    <li>
+                        #if($activeMenuLink==$WebPath.getCONTROL_PANEL_DASHBOARD())
+                            <a class="active" href="$WebPath.getCONTROL_PANEL_DASHBOARD()">$msg.get("NAV_DASHBOARD")</a>
+                        #else
+                            <a href="$WebPath.getCONTROL_PANEL_DASHBOARD()">$msg.get("NAV_DASHBOARD")</a>
+                        #end
+                    </li>
+
+                    #if($currentUserRole==$UserRole.getROOT())
+                        <li>
+                            #if($activeMenuLink==$WebPath.getCONTROL_PANEL_CUSTOMERS())
+                                <a class="active" href="$WebPath.getCONTROL_PANEL_CUSTOMERS()">$msg.get(
+                                    "NAV_CUSTOMERS")</a>
+                            #else
+                                <a href="$WebPath.getCONTROL_PANEL_CUSTOMERS()">$msg.get("NAV_CUSTOMERS")</a>
+                            #end
+                        </li>
+                    #end
+
+                    <li>
+                        #if($activeMenuLink==$WebPath.getCONTROL_PANEL_ORDERS())
+                            <a class="active" href="$WebPath.getCONTROL_PANEL_ORDERS()">$msg.get("NAV_ORDERS")</a>
+                        #else
+                            <a href="$WebPath.getCONTROL_PANEL_ORDERS()">$msg.get("NAV_ORDERS")</a>
+                        #end
+                    </li>
+
+                    #if($currentUser)
+                        <li id="nav-logout" class="nav-dropdown nav-right-side">
+                            <a class="nav-dropbtn">$currentUser</a>
+                            <div class="nav-dropdown-content">
+                                <a href="$WebPath.getCONTROL_PANEL_ACCOUNT()">$msg.get("NAV_ACCOUNT")</a>
+                                <a href="$WebPath.getLOGOUT()">$msg.get("NAV_LOGOUT")</a>
+                            </div>
+                        </li>
+                    #end
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="content" class="container">
+            $bodyContent
+        </div>
+    </main>
+    <div id="push"></div>
+</div>
+<div id="bottom">
+    #parse("/velocity/partials/footer_partial.vm")
+</div>
+</body>
+</html>
+#end

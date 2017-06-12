@@ -1,0 +1,21 @@
+html, body {
+    height: 100%;
+}
+
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -50px;
+}
+
+#bottom, #push {
+    height: 50px;
+}
+
+footer {
+    text-align: center;
+}
+
+
+

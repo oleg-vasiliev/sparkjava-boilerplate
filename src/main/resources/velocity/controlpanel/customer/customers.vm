@@ -1,0 +1,40 @@
+#set($activeMenuLink = $WebPath.getCONTROL_PANEL_CUSTOMERS())
+#parse("/velocity/controlpanel/controlpanel_layout.vm")
+#@mainLayout()
+<div class="row">
+    <div class="twelve column">
+        <h4>$msg.get("TITLE_CUSTOMERS")</h4>
+        <p> Pol, a bene devatio, demolitione! Flavum, salvus lumens rare transferre de mirabilis, velox gabalium.
+            Resistentias mori! Est fatalis ratione, cesaris. Cum fiscina persuadere, omnes brabeutaes magicae audax, bi-color devatioes.
+            Hercle, lapsus clemens!, plasmator! Cum navis experimentum, omnes galluses prensionem fidelis, emeritis medicinaes.
+            nutrix.
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="twelve column">
+        <table class="u-full-width">
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+            </tr>
+            </thead>
+            <tbody>
+                #foreach($customer in $customers)
+                <tr>
+                    <td><a href="$WebPath.getCONTROL_PANEL_CUSTOMERS()$customer.uid">$customer.name</a></td>
+                    <td>$customer.phone</td>
+                    <td>$customer.email</td>
+                    <td>$customer.address</td>
+                </tr>
+                #end
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+#end
