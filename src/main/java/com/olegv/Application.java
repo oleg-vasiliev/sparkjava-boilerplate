@@ -7,10 +7,7 @@ import com.olegv.dashboard.DashboardController;
 import com.olegv.dashboard.LoginController;
 import com.olegv.order.OrderController;
 import com.olegv.user.UserController;
-import com.olegv.util.CmdArgs;
-import com.olegv.util.Filters;
-import com.olegv.util.Path;
-import com.olegv.util.ViewUtil;
+import com.olegv.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.Spark;
@@ -23,7 +20,8 @@ public class Application {
     
     public static void main(String[] args) {
         CmdArgs cmdArgs = new CmdArgs(args);
-        Integer port = cmdArgs.switchIntValue("-port", 4567);
+        Integer cmdPort = cmdArgs.switchIntValue("-port", 4567);
+        Integer port = Integer.parseInt(AppProperties.getEnvironmentVariable("PORT", cmdPort.toString()));
         
         AppConfig appConfig = new AppConfig(cmdArgs);
         Injector injector = Guice.createInjector(appConfig);
