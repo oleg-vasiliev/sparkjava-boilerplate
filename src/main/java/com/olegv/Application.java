@@ -20,8 +20,11 @@ public class Application {
     
     public static void main(String[] args) {
         CmdArgs cmdArgs = new CmdArgs(args);
-        Integer cmdPort = cmdArgs.switchIntValue("-port", 4567);
-        Integer port = Integer.parseInt(AppProperties.getEnvironmentVariable("PORT", cmdPort.toString()));
+        
+        Integer port = cmdArgs.switchIntValue("-port", 4567);
+        if (cmdArgs.switchPresent("-heroku")) {
+            port = Integer.parseInt(AppProperties.getEnvironmentVariable("PORT", port.toString()));
+        }
         
         AppConfig appConfig = new AppConfig(cmdArgs);
         Injector injector = Guice.createInjector(appConfig);
