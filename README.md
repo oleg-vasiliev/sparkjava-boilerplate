@@ -1,5 +1,7 @@
 # Proper boilerplate project for Spark #
-This example demonstrates a proper way of organize project structure using [package by feature, not layer](http://www.javapractices.com/topic/TopicAction.do?Id=205) paradigm. 
-### Used Stack ###
-* [Spark](http://sparkjava.com/ "Spark")- micro framework for creating web apps in Java 8 with minimal effort
-* [Skeleton](http://getskeleton.com "Skeleton") - a dead simple, responsive boilerplate for frontend
+This is a boilerplate project for developing lightweight web apps with [Spark](http://sparkjava.com/)- a micro framework for creating web apps in Java 8 with minimal effort.
+
+Project contains simple implementations of commonly needed features like localization and  authorization with simple role based security. File structure organized using ["package by feature"](http://www.javapractices.com/topic/TopicAction.do?Id=205) style, it has more advantages than a standard "package by layer" approach, which is used everywhere. 
+On client side we have [Skeleton](http://getskeleton.com/)- a dead simple, responsive boilerplate for front-end that can be easily replaced by any more complex solutions like [Bootstrap](http://getbootstrap.com/), [Foundation](http://foundation.zurb.com/), [MDL](https://getmdl.io/) or whatever you want. All view templates is managed by [Apache Velocity](https://velocity.apache.org/) template engine, it's simple, fast and provides much more flexibility than rusty Java Server Pages. Also, for convenience testing and simpler object construction used [Google Guice](https://github.com/google/guice), but it can be easily removed if you prefer to do everything by yourself.
+
+More features will be added later: example of APIs, database integrations, unit and integration tests, etc. Also live example available on [Heroku](https://sparkjava-boilerplate.herokuapp.com)
